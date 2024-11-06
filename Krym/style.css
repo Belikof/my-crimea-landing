@@ -1,0 +1,569 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+/* Фоновое видео для всех секторов */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; /* Фон позади всего контента */
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3); /* Затемняющий эффект */
+    z-index: 0;
+}
+
+.section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Контент первого сектора */
+#section1 .content {
+    max-width: 700px; /* Ограничиваем ширину контента */
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -200px;
+    position: relative;
+    color: #fff;
+    z-index: 2;
+    padding: 20px;
+}
+
+#section1 h1 {
+    font-size: 48px; /* Устанавливаем более крупный шрифт */
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#section1 p {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #666;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #fff;
+    color: #666;
+}
+
+.consultation-button {
+    display: block; /* Выводим кнопку как блок для полной ширины */
+    margin: 20px auto 0;
+    width: calc(100% - 40px);
+    max-width: 280px;
+}
+
+/* Стили для кнопок */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 20px;
+}
+
+/* Стили для второго сектора */
+#section2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    min-height: 120vh;
+}
+
+#section2 .container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Левый блок во втором секторе */
+#section2 .left-block {
+    width: 400px;
+    height: 565px;
+    background-color: rgba(0, 0, 0, 0.4); /* Полупрозрачный черный фон */
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Затемненный слой поверх изображения */
+#section2 .left-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемняющий эффект */
+    z-index: 1;
+}
+
+/* Обновляем стиль текста внутри левого блока */
+.left-content {
+    position: relative;
+    z-index: 2; /* Поверх затемненного слоя */
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: left;
+    line-height: 1.8;
+    padding: 20px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.left-content p {
+    margin-bottom: 15px;
+}
+
+/* Контейнер для заголовка и правых блоков */
+#section2 .right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 120px;
+    margin-top: -95px;
+}
+
+#section2 h2 {
+    font-size: 48px; /* Такой же размер, как у заголовка в первом секторе */
+    font-weight: 700;
+    color: #f8f7f7;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#section2 .right-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#section2 .right-block {
+    width: 400px;
+    height: 90px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 10px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#section2 .right-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#section2 .right-block:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для третьего сектора */
+#section3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    min-height: 120vh;
+}
+
+#section3 .container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Левый блок "Контакты" */
+#section3 .left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#section3 .small-block {
+    width: 240px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+#section3 .left-side .label {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+/* Контейнер кругов в блоке контактов */
+#section3 .circle-container {
+    display: flex;
+    flex-direction: column; /* Размещаем круги вертикально */
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    gap: 20px;
+}
+
+/* Стили для кругов */
+#section3 .circle {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#section3 .circle:hover {
+    transform: scale(1.1);
+}
+
+#section3 .circle a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+#section3 .circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Правый блок "Запись на консультацию" */
+#section3 .right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -30px;
+}
+
+#section3 .large-block {
+    width: 500px;
+    padding: 40px;
+    height: 405px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    margin-top: 60px;
+}
+
+#section3 .right-side .label {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 10px;
+    text-align: left;
+    width: 100%;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#section3 .right-side .label:hover {
+    color: #000000; /* Серый цвет при наведении */
+}
+
+.consultation-link a {
+    color: #ffffff; /* Белый текст */
+    text-decoration: underline; /* Постоянное подчеркивание */
+    font-weight: 700; /* Жирный текст */
+    transition: color 0.3s ease; /* Плавный переход цвета */
+    padding: 10px 20px; /* Отступы для создания эффекта кнопки */
+    border-radius: 5px; /* Скругленные углы */
+    display: inline-block; /* Блочный стиль для кнопки */
+}
+
+.consultation-link a:hover {
+    color: #000000; /* Черный цвет текста при наведении */
+}
+
+/* Стили для текста внутри блока "Запись на консультацию" */
+#section3 .large-block p,
+#section3 .large-block ul {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.8;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+#section3 .large-block ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.phone-link {
+    color: #ffffff;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+.phone-link:hover {
+    text-decoration: underline;
+}
+
+/* Медиазапросы для экранов до 768px */
+/* CSS для мобильных экранов */
+@media (max-width: 768px) {
+    /* Предотвращаем горизонтальную прокрутку */
+    body, html {
+        overflow-x: hidden;
+    }
+
+    /* Общие стили для секций */
+    .section {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Первый сектор */
+    #section1 .content {
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    #section1 h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    #section1 p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons .button-link {
+        width: 100%;
+        max-width: 280px;
+        margin-bottom: 10px;
+    }
+
+    /* Второй сектор */
+    #section2 .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    #section2 .left-block,
+    #section2 .right-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    #section2 .left-block {
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #section2 h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    #section2 .right-container {
+        align-items: center;
+    }
+
+    #section2 .right-blocks {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    #section2 .right-block {
+        width: 100%;
+        font-size: 16px;
+        text-align: center;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+    .left-content {
+        font-size: 16px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Третий сектор */
+    #section3 .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    /* Центрируем надпись "Контакты" над горизонтальным блоком */
+    #section3 .left-side .label {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* Настраиваем блок контактов */
+    #section3 .left-side {
+        width: 100%;
+        max-width: 600px;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    /* Настраиваем small-block для горизонтального отображения */
+    #section3 .small-block {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Размещаем круги горизонтально */
+    #section3 .circle-container {
+        display: flex;
+        flex-direction: row; /* Горизонтальное направление */
+        justify-content: center; /* Центрируем круги */
+        align-items: center;
+        gap: 40px; /* Расстояние между кругами */
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Настраиваем размер кругов при необходимости */
+    #section3 .circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Увеличиваем высоту блока консультации и выравниваем текст по левому краю */
+    #section3 .right-side {
+        width: 100%;
+        max-width: 600px;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    #section3 .right-side .label {
+        font-size: 28px;
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    #section3 .large-block {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        height: auto;
+    }
+
+    #section3 .large-block p,
+    #section3 .large-block ul {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    #section3 .small-block {
+        height: 100px; /* Убираем фиксированную высоту */
+    }
+
+    .phone-link {
+        font-size: 18px;
+    }
+
+    /* Стили для ссылки «Запись на консультацию» */
+    .consultation-link a {
+        font-size: 18px;
+        padding: 10px 15px;
+        white-space: nowrap;
+        display: inline-block;
+    }
+}
